@@ -8,7 +8,9 @@ const HeaderMiddle = () => {
             <div className="headerLeft">
                 <div className="headerInner">
                     <div className="headerSearchForm">
-                        <form role="search" method="get"  action="/"></form>
+                        <form role="search" method="get"  action="/">
+                            <input type="text" />
+                        </form>
                     </div>
                 </div>
             </div>
