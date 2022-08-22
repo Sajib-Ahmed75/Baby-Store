@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageTopBar } from '../pageTopBar/pageTopBar';
 import HeaderTop from './headerTop';
-import HeaderBellow from './header_bellow/headerBellow';
+import HeaderBelow from './header_below/headerBelow';
 import HeaderMiddle from './header_middle/headerMiddle';
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
         <PageTopBar />
         <HeaderTop />
         <HeaderMiddle />
-        <HeaderBellow />
+        <HeaderBelow />
     </div>
   );
 }

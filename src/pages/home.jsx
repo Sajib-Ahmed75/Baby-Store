@@ -1,16 +1,15 @@
 import React from 'react';
 import { BrandData } from '../components/brandData/brandData';
 import { Slider }  from '../components/cardSlider/slider';
-import { CardData } from '../components/categories/cardData';
-import { Categories } from '../components/categories/categoriesData';
 import { Cta } from '../components/cta/cta';
 import { OurProduct } from '../components/ourProduct/ourProduct';
 // import { PricingCard } from '../components/pricingCard/pricingCard';
 // import { PageTopBar } from '../components/pageTopBar/pageTopBar';
 import { Wrapper } from '../components/wrapper/wrapper';
 import { Hero } from '../hero/hero';
-import { Card } from './../components/categories/categories';
 import { StyledHome } from './homeStyles';
+import { CategoriesSlider } from '../components/categories/categoriesSlider';
+import { RecommendationSlider } from '../components/recommendationCard/recommendationSlider';
 
 
 const Home = () => {
@@ -21,22 +20,10 @@ const Home = () => {
         <Wrapper>
           
           <section className="categoriesSection">
-
             <div className="header">
               <h2 className="h2">Top Categories</h2>
             </div>
-
-            <div className="cardContainer">
-
-              {Categories.map((props,i)=>{
-                const {image,title,number}=props
-                  return(
-                    <Card key={i} image={image} title={title} number={number}/>
-                  )
-              })}
-
-            </div>
-
+            <CategoriesSlider />
           </section>
 
           {/* <PricingCard /> */}
@@ -51,15 +38,10 @@ const Home = () => {
                   Recommendation
                 </h2>
               </div>
-              <div className="cardContainer">
-                {CardData.map((props,i)=>{
-                  const {image,title}=props
-                    return(
-                      <Card key={i}  image={image} title={title} />
-                    )
-                })}
-              </div>
+              
           </section>
+              <RecommendationSlider />
+
         </Wrapper>
           <section className="testimonialSection">
             <div className="header">
@@ -88,7 +70,6 @@ const Home = () => {
             </div>
           </section>
           
-
           <OurProduct />
         </Wrapper>
     </StyledHome>

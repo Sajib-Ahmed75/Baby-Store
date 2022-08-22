@@ -9,7 +9,7 @@ const StyledWrapper = styled.div`
     align-content: center;
     flex-wrap: wrap; */
     max-width: 1280px;
-    padding: 0 20px;
+    padding: 0 35px;
     margin: 0 auto;
     ${media.down("sm")} {
         width: 100%;

@@ -27,6 +27,7 @@ const StyledHeaderTop = styled.section`
     
 
     .left{
+        padding: 0 14px;
 
         .links{
             display: flex;
@@ -53,8 +54,10 @@ const StyledHeaderTop = styled.section`
 
     }
     .middle{
+        margin-left: -120px;
         .header-text{
             margin-right: 12px;
+            font-size: 15px;
         }
         .separator{
             border-right: 0.1px solid #f0e9e9de;

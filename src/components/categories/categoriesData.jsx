@@ -17,5 +17,6 @@ export const Categories =[
         title: 'Decor &amp; Toy',
         number: '8'
     },
+    
 
 ]

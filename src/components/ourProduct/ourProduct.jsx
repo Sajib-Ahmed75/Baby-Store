@@ -7,6 +7,18 @@ export const OurProduct = () => {
     <StyledOurProduct>
         <div className="image">
              <div className="info">
+                <h2 className="h2">
+                    Baby Dreamy Bedroom.
+                </h2>
+                <p className="description">
+                    We believe in crafting pieces where sustainability and style go hand in hand. 
+                </p>
+                <div className="btn">
+                    <Link to="/"><span>Shop Now</span></Link>
+                </div>
+            </div>
+        </div>
+        <div className="info">
             <h2 className="h2">
                 Baby Dreamy Bedroom.
             </h2>
@@ -16,7 +28,6 @@ export const OurProduct = () => {
             <div className="btn">
                 <Link to="/"><span>Shop Now</span></Link>
             </div>
-        </div>
         </div>
        
     </StyledOurProduct>

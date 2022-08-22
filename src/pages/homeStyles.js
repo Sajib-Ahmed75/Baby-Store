@@ -1,5 +1,5 @@
-
 import  styled  from 'styled-components';
+import { media } from '../styles/responsive';
 
 export const StyledHome = styled.section`
 
@@ -13,57 +13,18 @@ export const StyledHome = styled.section`
     .categoriesSection{
         margin-top: 100px;
         margin-bottom: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        row-gap: 60px;
-        
-
-        .cardContainer{
-            
-            
-
-            .categoriesInfo{
-                h5{
-                    font-size: 20px;
-                    line-height: 1.5;
-                    font-weight: 600;
-                    margin-top: 21px;
-                    a{
-                        color: #000;
-                    }
-                }
-            }
-        } 
+        .header{
+            margin-bottom: 60px;
+        }
     }
 /* Top Categories section ends here  */
 
 /* Recommendation section start here  */
 
     .recommendationSection{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        row-gap: 60px;
-
-        .cardContainer{
-
-
-            .categoriesInfo{
-                h5{
-                    font-size: 16px;
-                    font-weight: 600;
-                    line-height: 1.5;
-                    text-align: center;
-                    margin-top: 27px;
-                    a{
-                        color: #000;
-                    }
-                }
-            }
-        }
+       .header{
+            margin-bottom: 60px;
+        } 
     }
 
 
@@ -76,27 +37,7 @@ export const StyledHome = styled.section`
     /* both cards section header design  */
 
 
-    .cardContainer{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            column-gap: 30px;
-            
-            .card{
-                .thumbnail{
-                overflow: hidden;
-
-                }
-                img{
-                    transition: all .75s cubic-bezier(0,0,.2,1);
-                }
-                &:hover{
-                    img{
-                        transform: scale(1.1);
-                    }
-                }
-            }
-        }
+    
 
     .header{
             position: relative;
@@ -121,6 +62,10 @@ export const StyledHome = styled.section`
                 font-size: 36px;
                 font-weight: 500;
                 line-height: 1.28em;
+                ${media.down("sm")}{
+                    font-size: 28px;
+                    padding: 0 20px;
+                }
 
                 
             }
@@ -156,11 +101,17 @@ export const StyledHome = styled.section`
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             grid-row-gap: 20px;
+            ${media.down("sm")}{
+                grid-template-columns: 1fr 1fr;
+            }
 
             img{
                 cursor: pointer;
                 opacity: .3;
                 transition: all .75s cubic-bezier(0,0,.2,1);
+                ${media.down("sm")}{
+                    width: 135px;
+                }
                 &:hover{
                     opacity: 1;
                 }
