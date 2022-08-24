@@ -1,7 +1,7 @@
 const breakPoint = {
   sm: 575,
   md: 768,
-  lg: 1024,
+  lg: 995,
   xl: 1200,
 };
 

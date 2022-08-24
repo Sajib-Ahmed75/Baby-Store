@@ -52,9 +52,32 @@ export const StyledCta = styled.div`
                 font-size: 16px;
                 line-height: 1.75;
                 display: inline-block;
-                color: #000;
+                color: #666;
                 ${media.down("sm")}{
                     text-align: center;
+                }
+            }
+        }
+        .link{
+            a{
+                color: #000;
+                position: relative;
+                padding-bottom: 5px;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #000;
+                    transform-origin: right;
+                    transform: scaleX(1) translateZ(1);
+                    transition: transform .6s cubic-bezier(.165,.84,.44,1);
+                }
+                &:hover::after{
+                    transform-origin: right;
+                    transform: scaleX(0) translateZ(0);
                 }
             }
         }

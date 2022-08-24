@@ -6,6 +6,7 @@ import { media } from './../../styles/responsive';
 
 
 export const StyledOurProduct = styled.section`
+    margin-bottom: 100px;
     width: 100%;
 
 

@@ -1,10 +1,14 @@
 import  styled  from 'styled-components';
+import { media } from '../../styles/responsive';
 
 export const StyledCard = styled.div`
 
     .cardSlider{
         background-color: #fff;
         padding: 50px 35px 65px 35px;
+        ${media.down("md")}{
+            padding: 30px;
+        }
         .icons{
             color: #E1927F;
             font-size: 20px;

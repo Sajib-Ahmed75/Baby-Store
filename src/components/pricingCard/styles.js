@@ -1,4 +1,5 @@
 import  styled  from 'styled-components';
+import { media } from '../../styles/responsive'
 
 export const StyledPricingCard = styled.div`
 
@@ -163,14 +164,21 @@ export const StyledPricingCard = styled.div`
                 line-height: 24px;
                 font-weight: 500;
                 color: #9b9b9b;
+                display: block;
             }
         }
         .title{
             font-size: 16px;
             font-weight: 500;
-            line-height: 1.5px;
+            line-height: 1.5em;
+            display: inline;
             a{
                 color: #000;
+                ${media.down("sm")}{
+                font-size: 14px;
+                line-height: 21px;
+                
+                }
             }
         }
         .price{

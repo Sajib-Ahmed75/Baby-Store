@@ -10,6 +10,7 @@ import { CategoriesSlider } from '../components/categories/categoriesSlider';
 import { RecommendationSlider } from '../components/recommendationCard/recommendationSlider';
 import { PricingData } from './../components/pricingCard/pricingData';
 import { PricingCard } from './../components/pricingCard/pricingCard';
+import { OfferExpired } from '../components/priceOfferDate/OfferExpired';
 
 
 const Home = () => {
@@ -92,6 +93,7 @@ const Home = () => {
           
           <OurProduct />
         </Wrapper>
+        <OfferExpired />
     </StyledHome>
 
     

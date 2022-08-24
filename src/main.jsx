@@ -10,7 +10,7 @@ import Blog from './pages/blog';
 import Pages from './pages/pages';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.Fragment>
+  <>
     <GlobalStyle />
   
     <BrowserRouter>
@@ -25,5 +25,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </Routes>
     </BrowserRouter>
 
-  </React.Fragment>
+  </>
 )

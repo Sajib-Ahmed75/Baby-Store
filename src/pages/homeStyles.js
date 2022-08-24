@@ -75,6 +75,7 @@ export const StyledHome = styled.section`
         background-color: #f7f2f2;
         padding: 110px 0 80px 0;
         margin-bottom: 100px;
+        
         .header{
             margin-bottom: 80px;
             .h2{
@@ -85,6 +86,17 @@ export const StyledHome = styled.section`
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-gap: 30px;
+            ${media.down("lg")}{
+                grid-template-columns: 1fr 1fr 1fr ;
+            }
+            ${media.down("md")}{
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+            }
+            ${media.down("sm")}{
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+            }
         }
     }
     /* two card section header design  */
