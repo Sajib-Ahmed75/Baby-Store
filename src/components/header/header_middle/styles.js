@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../../styles/responsive";
 
 export const StyledHeaderMiddle = styled.header`
 
@@ -8,12 +9,55 @@ export const StyledHeaderMiddle = styled.header`
         align-content: center;
         align-items: center;
         padding-top: 14px;
+        min-height: 70px;
+        ${media.down("sm")}{
+            min-height: 50px;
+        }
+
+        .headerInner{
+            display: flex;
+            column-gap: 14px;
+            margin: 0 calc(-1 * 14px);
+            align-items: center;
+            flex-shrink: 0;
+        }
         
     }
     .headerLeft{
+        /* mobile menu bar icon design here */
+        .mobileMenuBar{
+            /* padding: 0 14px; */
+            margin: 0 14px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+            line-height: 1;
+            display: none;
+            ${media.down("xl")}{
+                display: block;
+            }
+            .menuBarIcon{
+                color: #000;
+                svg{
+                    position: relative;
+                    z-index: 2;
+                    display: block;
+                    /* vertical-align: middle; */
+                }
+            }
+        }
+
+        /* mobile menu bar icon design here */
+
+
 
         .headerSearchForm{
             padding: 0 14px;
+            ${media.down("md")}{
+                display: none;
+            }
         }
         
         form{
@@ -32,6 +76,9 @@ export const StyledHeaderMiddle = styled.header`
             min-height: 45px;
             border-radius: 23px;
             width: 270px;
+            ${media.down("xl")}{
+                width: 209px;
+            }
         }
         button{
             position: absolute;
@@ -63,12 +110,23 @@ export const StyledHeaderMiddle = styled.header`
     .headerCenter{
         .headerCenterInner{
             margin-left: -144px;
+            ${media.down("lg")}{
+                margin-left: 0;
+            }
         }
         a{
             padding: 5px 0;
             img{
                 width: 169px;
                 height: 44px;
+                ${media.down("lg")}{
+                    width: 145px;
+                    height: 38px;
+                }
+                ${media.down("sm")}{
+                    width: 120px;
+                    height: 32px;
+                }
             }
         }
     }
@@ -80,6 +138,19 @@ export const StyledHeaderMiddle = styled.header`
 
         .SearchIcon{
             display: none;
+            ${media.down("md")}{
+                display: block;
+            }
+        }
+        .loginIcon{
+            ${media.down("md")}{
+                display: none;
+            }
+        }
+        .wishListIcon{
+            ${media.down("md")}{
+                display: none;
+            }
         }
 
         a{
@@ -142,4 +213,6 @@ export const StyledHeaderMiddle = styled.header`
             }
         }
     }
+
+    
 `

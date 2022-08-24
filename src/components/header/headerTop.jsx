@@ -9,9 +9,12 @@ import { THEME } from './../../styles/theme';
 import {FaFacebook} from 'react-icons/fa'
 import {FaInstagram} from 'react-icons/fa'
 import {BiChevronDown} from 'react-icons/bi'
-import { media } from '../../styles/responsive';
+import { media } from './../../styles/responsive';
 
 const StyledHeaderTop = styled.section`
+    ${media.down("md")}{
+        display: none;
+    }
     .headerTop{
         display: flex;
         justify-content: space-between;
@@ -20,14 +23,15 @@ const StyledHeaderTop = styled.section`
         flex-wrap: wrap;
         padding: 6px 0;
         border-bottom: 0.1px solid ${THEME.colors.borderBottomColor};
-        ${media.down("sm")} {
-            display: none;
-        }
+        
     }
     
 
     .left{
         padding: 0 14px;
+        ${media.down("lg")}{
+            display: none;
+        }
 
         .links{
             display: flex;

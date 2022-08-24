@@ -1,6 +1,10 @@
 import styled from "styled-components";
+import { media } from "../../../styles/responsive";
 
 export const StyledHeaderBelow = styled.header`
+    ${media.down("xl")}{
+        display: none;
+    }
     .headerBelowInner{
         display: flex;
         align-content: center;

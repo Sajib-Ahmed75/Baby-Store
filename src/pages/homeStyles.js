@@ -71,7 +71,22 @@ export const StyledHome = styled.section`
             }
             
         }
-
+    .pricingSection{
+        background-color: #f7f2f2;
+        padding: 110px 0 80px 0;
+        margin-bottom: 100px;
+        .header{
+            margin-bottom: 80px;
+            .h2{
+                background-color: #f7f2f2;
+            }
+        }
+        .cardContainer{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 30px;
+        }
+    }
     /* two card section header design  */
 
     /* card design */
@@ -101,6 +116,20 @@ export const StyledHome = styled.section`
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
             grid-row-gap: 20px;
+            .brandImg{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            ${media.down("xl")}{
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            ${media.down("lg")}{
+                grid-template-columns: 1fr 1fr 1fr ;
+            }
+            /* ${media.down("md")}{
+                grid-template-columns: 1fr 1fr 1fr;
+            } */
             ${media.down("sm")}{
                 grid-template-columns: 1fr 1fr;
             }

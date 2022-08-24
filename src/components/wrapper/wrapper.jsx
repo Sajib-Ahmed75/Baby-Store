@@ -11,6 +11,9 @@ const StyledWrapper = styled.div`
     max-width: 1280px;
     padding: 0 35px;
     margin: 0 auto;
+    ${media.down("xl")} {
+       padding: 0 15px;
+    }
     ${media.down("sm")} {
         width: 100%;
     }

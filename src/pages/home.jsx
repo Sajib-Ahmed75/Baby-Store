@@ -3,13 +3,13 @@ import { BrandData } from '../components/brandData/brandData';
 import { Slider }  from '../components/cardSlider/slider';
 import { Cta } from '../components/cta/cta';
 import { OurProduct } from '../components/ourProduct/ourProduct';
-// import { PricingCard } from '../components/pricingCard/pricingCard';
-// import { PageTopBar } from '../components/pageTopBar/pageTopBar';
 import { Wrapper } from '../components/wrapper/wrapper';
 import { Hero } from '../hero/hero';
 import { StyledHome } from './homeStyles';
 import { CategoriesSlider } from '../components/categories/categoriesSlider';
 import { RecommendationSlider } from '../components/recommendationCard/recommendationSlider';
+import { PricingData } from './../components/pricingCard/pricingData';
+import { PricingCard } from './../components/pricingCard/pricingCard';
 
 
 const Home = () => {
@@ -25,12 +25,30 @@ const Home = () => {
             </div>
             <CategoriesSlider />
           </section>
+      
+        </Wrapper>
+          <div className="pricingSection">
+            <Wrapper>
+              <div className="header">
+                <h2 className="h2">
+                  Hot This Week
+                </h2>
+              </div>
+              <div className="cardContainer">
+                { PricingData.map((props, i) =>{
+                  const {mainImg, hoverImg, category, title, price} =props
+                  return(
+                    <PricingCard key={i} mainImg={mainImg} hoverImg={hoverImg} category={category} title={title} price={price} />
+                  )
+                })}
+              </div>
+            </Wrapper>
+          </div>
 
-          {/* <PricingCard /> */}
+          
 
+        <Wrapper>
           <Cta />
-
-
 
           <section className="recommendationSection">
               <div className="header">
@@ -62,7 +80,9 @@ const Home = () => {
               {BrandData.map((props,i)=>{
                 const {image}=props
                 return(
-                  <img key={i} src={image} alt="brand image" />
+                  <div className="brandImg" key={i}>
+                    <img  src={image} alt="brand image" />
+                  </div>
                 )
               })
 

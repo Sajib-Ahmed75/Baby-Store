@@ -1,5 +1,6 @@
 import React from "react";
 import  styled  from 'styled-components';
+import { media } from "../../styles/responsive";
 import { Wrapper } from "../wrapper/wrapper";
 import { THEME } from './../../styles/theme';
 
@@ -19,6 +20,11 @@ const StyledPageTopBar = styled.section`
         display: flex;
         justify-content: center;
         align-items: center;
+        span{
+            ${media.down("sm")}{
+                display: none;
+            }
+        }
     }
 
 `;
@@ -28,7 +34,7 @@ export const PageTopBar = () => {
     return (
         <StyledPageTopBar>
             <Wrapper>
-                <div>Free Express Shipping on AU orders $200+</div>
+                <div>Free Express Shipping on AU orders <span>$200+</span> </div>
             </Wrapper>
         </StyledPageTopBar>
     )

@@ -1,20 +1,31 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { StyledHeaderMiddle } from './styles';
 import { Wrapper } from './../../wrapper/wrapper';
+import { FaBars } from 'react-icons/fa'
 import { GoSearch } from 'react-icons/go'
 import { Link } from 'react-router-dom';
 import  Logo  from '../../../images/logo/dark-logo.png'
 import LoginIcon from '../../../images/icon/login.svg'
 import CartIcon from '../../../images/icon/cart.svg'
 import WishListIcon from '../../../images/icon/wishlist.svg'
+import { MobileMenu } from './../mobileMenu/mobileMenu';
 
 const HeaderMiddle = () => {
+    const [mobileMenu, setMobileMenu] = useState (false);
+    const handleClick = () => {
+        setMobileMenu (mobileMenu => !mobileMenu);
+    }
   return (
     <StyledHeaderMiddle>
         <Wrapper>
             <div className="headerWrap">
                 <div className="headerLeft">
                     <div className="headerInner">
+                        <div className="mobileMenuBar">
+                            <div className="menuBarIcon">
+                                <FaBars size="20"onClick={handleClick} />
+                            </div>
+                        </div>
                         <div className="headerSearchForm">
                             <form role="search" method="get"  action="/">
                                 <input type="text" className='searchInput' placeholder='Search Product' />
@@ -46,7 +57,7 @@ const HeaderMiddle = () => {
                             <span className='subMenu'>Log In</span>
                         </Link>
 
-                        <Link to="/" className='wishlistIcon headerRightLink'>
+                        <Link to="/" className='wishListIcon headerRightLink'>
                             <div className="headerRightIcon">
                                 <img src={WishListIcon} alt="wishlist icon" className='headerRightImg wishlistIcon'/>
                                 <span className='iconBadge'>1</span>
@@ -65,6 +76,9 @@ const HeaderMiddle = () => {
                 </div>
             </div>
         </Wrapper>
+        
+            <MobileMenu mobileMenu = {mobileMenu} handleClick ={handleClick}/>
+    
     </StyledHeaderMiddle>
   );
 }
