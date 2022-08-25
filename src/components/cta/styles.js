@@ -71,7 +71,7 @@ export const StyledCta = styled.div`
                     width: 100%;
                     height: 2px;
                     background-color: #000;
-                    transform-origin: right;
+                    transform-origin: left;
                     transform: scaleX(1) translateZ(1);
                     transition: transform .6s cubic-bezier(.165,.84,.44,1);
                 }
