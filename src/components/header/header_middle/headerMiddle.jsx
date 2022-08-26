@@ -15,6 +15,8 @@ import  emptyImg  from '../../../../public/image/cart/empty-cart.png'
 import { HiOutlinePencil } from 'react-icons/hi'
 import { FaShippingFast } from 'react-icons/fa'
 import { RiCouponLine } from 'react-icons/ri'
+import { AiOutlineEyeInvisible } from 'react-icons/ai'
+import { AiOutlineEye } from 'react-icons/ai'
 const HeaderMiddle = () => {
     const [mobileMenu, setMobileMenu] = useState (false);
     const handleClick = () => {
@@ -28,6 +30,23 @@ const HeaderMiddle = () => {
     const searchBarClick = () =>{
         setSearchBar (searchBar => !searchBar)
     }
+    const [loginForm, setLoginForm] = useState (false);
+    const loginFormClick = () =>{
+        setLoginForm (loginForm => !loginForm)
+    }
+    const [type , setType] = useState (false)
+    const handlePass = () => {
+        setType (type => !type)
+    }
+    const [signUpForm, setSignUpForm] = useState (false);
+    const signUpClick = () =>{
+        setSignUpForm (signUpForm => !signUpForm)
+    }
+    const [forgatPass, setForgatPass] = useState (false);
+    const forgatPassClick = () =>{
+        setForgatPass (forgatPass => !forgatPass)
+    }
+
   return (
     <StyledHeaderMiddle>
         <Wrapper>
@@ -63,10 +82,10 @@ const HeaderMiddle = () => {
                 <div className="headerRight">
                     <div className="headerRightInner">
                         <div className="SearchIcon">
-                            <GoSearch size="20"/>
+                            <GoSearch size="20" onClick={loginFormClick}/>
                         </div>
                         <Link to="/" className='loginIcon headerRightLink'>
-                            <img src={LoginIcon} alt="log in icon" className='headerRightImg loginIcon'/>
+                            <img src={LoginIcon} alt="log in icon" className='headerRightImg loginIcon' onClick={loginFormClick}/>
                             <span className='subMenu'>Log In</span>
                         </Link>
 
@@ -206,7 +225,7 @@ const HeaderMiddle = () => {
                         <div className="headerRight">
                             <div className="headerRightInner">
                                 <Link to="/" className='loginIcon headerRightLink'>
-                                    <img src={LoginIcon} alt="log in icon" className='headerRightImg loginIcon'/>
+                                    <img src={LoginIcon} alt="log in icon" className='headerRightImg loginIcon' onClick={loginFormClick}/>
                                     <span className='subMenu'>Log In</span>
                                 </Link>
 
@@ -239,6 +258,152 @@ const HeaderMiddle = () => {
         </div>
 
         {/* popup search end here  */}
+
+        {/* popup login form start here */}
+
+    <div className={loginForm ? "popupLoginForm openLoginForm" : "popupLoginForm closeLoginForm"}>
+        <div className="overlay"></div>
+        <div className="loginFormContent">
+            <div className="closeBtn" onClick={loginFormClick}>
+                <AiOutlineClose />
+            </div>
+            <div className="loginFormContentWrap">
+                <div className="loginInner">
+                    <div className="loginContentHeader">
+                        <h3 className="h3">Sign In</h3>
+                        <p className="description">
+			    			Don't have an account yet? <Link to="/" onClick={() => {signUpClick(); loginFormClick()}}>Sign up</Link> for free
+                        </p>
+                    </div>
+                    <div className="loginContentBody">
+                        <form action="/">
+                            <div className="formGroup">
+                                <label for="ip_user_login" className="formLabel">Username or email</label>
+                                <input type="text" className="loginInput" placeholder="Your username or email"></input>
+                                <label className='error' for="ip_password">This field is required</label>
+                            </div>
+                            <div className="formGroup">
+                                <label for="ip_password" class="formLabel">Password</label>
+                                <div className="inputGroup pass">
+                                    <input type={type ? "text" : "password"} class="loginInput" placeholder="Password"></input>
+                                    <label className='error' for="ip_password">This field is required</label>
+                                    <div className='PassChange' onClick={handlePass}>
+                                        {type ? <AiOutlineEyeInvisible /> :<AiOutlineEye />}
+                                    </div>
+                                </div>
+                            </div>
+                                <div className="formGroup check">
+					    		<label className="formLabelCheck">
+					    			<input className="formCheckbox" type="checkbox" />
+					    			<span>Stay signed in</span>
+					    		</label>
+                                <div className="forgetPass">
+                                    <Link to="/" onClick={() => {loginFormClick(); forgatPassClick() }}>Forgot your password?</Link>
+                                </div>
+                            </div>
+                            <div className="formGroupSubmitBtn">
+                                <button type="submit" className="formSubmit"><span>Log In</span></button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        {/* popup login form end here */}
+
+        {/* popup sign up form start here */}
+
+    <div className={signUpForm ? "popupSignUpForm openSignUpForm" : "popupSignUpForm closeSignUpForm"}>
+        <div className="overlay"></div>
+        <div className="signUpContent">
+            <div className="closeBtn">
+                <AiOutlineClose onClick={signUpClick}/>
+            </div>
+            
+                <div className="inner">
+                    <div className="signUpHeader">
+                        <h3 className="h3">Sign Up</h3>
+                        <p className="description">Already have an account? <Link to="/" className="login" 
+                        onClick={() => {loginFormClick(); signUpClick()}}> Log in </Link></p>
+                    </div>
+                    <div className="signUpBody">
+                        <form action="/">
+                            <div className="formGroup">
+                                <label for="ip_user_login" className="signUpLabel">Your Name</label>
+                                <input type="text" className="signUpInput" placeholder="Your Name"></input>
+                                <label className='error' for="ip_password">This field is required</label>
+                            </div>
+                            <div className="formGroup">
+                                <label for="ip_user_login" className="signUpLabel">Username</label>
+                                <input type="text" className="signUpInput" placeholder="Username"></input>
+                                <label className='error' for="ip_password">This field is required</label>
+                            </div>
+                            <div className="formGroup">
+                                <label for="ip_user_login" className="signUpLabel">Email</label>
+                                <input type="email" className="signUpInput" placeholder="Your Email"></input>
+                                <label className='error' for="ip_password">This field is required</label>
+                            </div>
+                            <div className="formGroup pass">
+                                <label for="ip_password" class="signUpLabel">Password</label>
+                                <div className="inputGroup pass">
+                                    <input type={type ? "text" : "password"} class="signUpInput" placeholder="Password"></input>
+                                    <label className='error' for="ip_password">This field is required</label>
+                                    <div className='PassChange' onClick={handlePass}>
+                                        {type ? <AiOutlineEyeInvisible /> :<AiOutlineEye />}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="formGroup check">
+                                <label class="checkLabel">
+								<input type="checkbox" />
+                                Yes, I agree with <Link to="/">Privacy Policy</Link> and Terms of U signUp </label>
+                            </div>
+                            <div className="formGroup btn">
+                                <button type="submit" className="formSubmit"><span>Sign Up</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+
+        {/* popup sign up form end here */}
+
+        {/* popup forget password start here */}
+
+    <div className={forgatPass ? "popupForgetPass openForgetPass" : "popupForgetPass closeForgetPass"}>
+        <div className="overlay"></div>
+        <div className="forgetPassContent">
+            <div className="closeBtn" onClick={forgatPassClick}>
+                <AiOutlineClose />
+            </div>
+            <div className="inner">
+                <div className="forgetPssHeader">
+                    <h3 className="h3">Lost your password?</h3>
+                    <p className="description">
+						Please enter your username or email address. You will receive a link to create a new password via emailRemember now? 
+                        <Link to="/" className="login" onClick={() => { forgatPassClick(); loginFormClick() }}> Back to login </Link>
+                    </p>
+                </div>
+                <div className="forgetPassBody">
+                    <div className="formGroup">
+                        <label for="ip_user_login" className="forgetPassLabel">Username or email</label>
+                        <input type="text" className="forgetPassInput" placeholder="Your username or email"></input>
+                        <label className='error' for="ip_password">This field is required</label>
+                    </div>
+                    <div className="btn">
+                        <button type="submit" className="forgetPassSubmit"><span>Log In</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        {/* popup forget password end here */}
     
     </StyledHeaderMiddle>
   );

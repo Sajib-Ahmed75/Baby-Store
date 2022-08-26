@@ -30,7 +30,7 @@ export const StyledMobileMenu = styled.div`
     
 
     .inner{
-        position: relative;
+        position: absolute;
         height: 100%;
         max-width: calc(100vw - 55px);
         text-align: start;
